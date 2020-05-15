@@ -8,12 +8,9 @@ def first(request):
     return HttpResponse("Hello World!")
 
 class Second(View):
-    books=Book.objects.all()
-    output=''
-
-    for book in books:
-        output+= (f'''We have {book.title} 
-        with ID {book.id} in our Database <br>''')
+    book=Book.objects.get(id=1)
+    output=(f'You found {book.title}')
+    
 
     def get(self,request):
         return HttpResponse(self.output)
