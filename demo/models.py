@@ -8,3 +8,5 @@ class Book(models.Model):
     published=models.DateField(default="1999-01-01")
     is_published=models.BooleanField(default=False)
     cover=models.ImageField(upload_to='covers/',default = "1482881197192578721.jpg")
+    def __str__(self):
+        return self.title
